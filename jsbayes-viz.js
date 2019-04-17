@@ -363,7 +363,8 @@
           })
           .on('click', function (e) {
             const h = this;
-            const id = e.id.replace(options.id.substring(1), "");
+
+            const id = e.label;
             const v = h.attributes['data-value'].value;
             const g = graph.graph;
             const node = g.node(id);
