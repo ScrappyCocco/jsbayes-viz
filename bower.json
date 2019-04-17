@@ -1,7 +1,7 @@
 {
-  "name": "jsbayes-viz",
+  "name": "better-jsbayes-viz",
   "authors": [
-    "Jee Vang <vangjee@gmail.com>"
+    "Scrappy Cocco"
   ],
   "description": "Simple Bayesian Belief Network (BBN) visualization library.",
   "main": "jsbayes-viz.js",
@@ -18,7 +18,7 @@
     "visualization"
   ],
   "license": "Apache-2.0",
-  "homepage": "https://github.com/vangj/jsbayes-viz",
+  "homepage": "https://github.com/ScrappyCocco/jsbayes-viz",
   "private": false,
   "ignore": [
     "**/.*",
