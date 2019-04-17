@@ -340,7 +340,7 @@
       .style('text-anchor', 'middle');
     text_tag.append('title')
       .text(function (d) {
-        return formatNodeName(d.label);
+        return d.label;
       });
     nodes.each(function (d) {
       let y = 30;
@@ -388,7 +388,7 @@
           });
         text_tag.append('title')
           .text(function (d) {
-            return formatValue(d.values[i]);
+            return d.values[i];
           });
         y += 15;
       }
