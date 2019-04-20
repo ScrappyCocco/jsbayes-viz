@@ -106,7 +106,7 @@
       addNode: function (id, svg_id, label, values, probs) {
         const width = 150;
         const height = values.length * 15 + 20;
-        const node_id = (id.toString() + svg_id.toString()).replace(/\s/g,'');
+        const node_id = (id.toString() + svg_id.toString()).replace(/\s/g, '');
         const node = {
           id: node_id,
           label: label,
@@ -129,7 +129,7 @@
         return node;
       },
       node: function (id) {
-        id = id.replace(/\s/g,'');
+        id = id.replace(/\s/g, '');
         if (!this.map) {
           this.nodeMap = {};
           for (let i = 0; i < this.nodes.length; i++) {
@@ -474,10 +474,10 @@
         e.x = d3.event.x;
         e.y = d3.event.y;
 
-        const id = 'g#' + e.id.replace(/\s/g,'');
+        const id = 'g#' + e.id.replace(/\s/g, '');
         d3.select(id).attr({transform: e.translate()});
 
-        let arcs = 'line[data-parent="' + e.id.replace(/\s/g,'') + '"]';
+        let arcs = 'line[data-parent="' + e.id.replace(/\s/g, '') + '"]';
         d3.selectAll(arcs)
           .each(function (d) {
             const points = graph.edge(d.parent, d.child);
@@ -489,7 +489,7 @@
             });
           });
 
-        arcs = 'line[data-child=' + e.id.replace(/\s/g,'') + ']';
+        arcs = 'line[data-child=' + e.id.replace(/\s/g, '') + ']';
         d3.selectAll(arcs)
           .each(function (d) {
             let points = graph.edge(d.parent, d.child);
@@ -514,8 +514,8 @@
       .each(function (d) {
         const points = graph.edge(d.parent, d.child);
         d3.select(this).attr({
-          'data-parent': d.parent.replace(/\s/g,''),
-          'data-child': d.child.replace(/\s/g,''),
+          'data-parent': d.parent.replace(/\s/g, ''),
+          'data-child': d.child.replace(/\s/g, ''),
           x1: points.x1,
           y1: points.y1,
           x2: points.x2,
