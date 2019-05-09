@@ -362,29 +362,31 @@
             }
           })
           .on('click', function (e) {
-            const h = this;
+            if (options.canBeObserved) {
+              const h = this;
 
-            const id = e.label;
-            const v = h.attributes['data-value'].value;
-            const g = graph.graph;
-            const node = g.node(id);
+              const id = e.label;
+              const v = h.attributes['data-value'].value;
+              const g = graph.graph;
+              const node = g.node(id);
 
-            if (undefined === node.isObserved || false === node.isObserved) {
-              g.observe(id, v);
-            } else {
-              const index1 = g.node(id).valueIndex(v);
-              const index2 = g.node(id).value;
-              if (index1 === index2) {
-                g.unobserve(id);
-              } else {
+              if (undefined === node.isObserved || false === node.isObserved) {
                 g.observe(id, v);
+              } else {
+                const index1 = g.node(id).valueIndex(v);
+                const index2 = g.node(id).value;
+                if (index1 === index2) {
+                  g.unobserve(id);
+                } else {
+                  g.observe(id, v);
+                }
               }
-            }
 
-            g.sample(SAMPLES)
-              .then(function (r) {
-                drawNodeBars(graph);
-              });
+              g.sample(SAMPLES)
+                .then(function (r) {
+                  drawNodeBars(graph);
+                });
+            }
           })
           .text(function (d) {
             return formatValue(d.values[i]);

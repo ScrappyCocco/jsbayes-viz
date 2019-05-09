@@ -33,6 +33,7 @@ interface DrawOptions {
   height: number | any;
   graph: VGraph;
   samples: number;
+  canBeObserved: boolean; // If the user can click on the value to make the observe() on that value
 }
 
 interface CsvOptions {
@@ -41,6 +42,7 @@ interface CsvOptions {
 }
 
 interface JsBayesViz {
+  // The svg_id must be unique in the page to avoid errors between multiple graphs
   fromGraph(graph: any, svg_id: string): VGraph;
 
   draw(options: DrawOptions): void;
