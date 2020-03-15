@@ -1,6 +1,6 @@
 {
   "name": "better-jsbayes-viz",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Better implementation of vangj's viz library - Simple Bayesian Belief Network (BBN) visualization and interaction library.",
   "main": "jsbayes-viz.js",
   "scripts": {
@@ -29,9 +29,5 @@
     "d3": "^3.5.17",
     "dagre": "^0.8.4",
     "jsbayes": "0.0.6"
-  },
-  "devDependencies": {
-    "chai": "^3.5.0",
-    "mocha": "^5.2.0"
   }
 }
